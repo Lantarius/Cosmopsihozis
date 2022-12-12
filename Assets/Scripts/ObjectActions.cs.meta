@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e782b77d62ae55c408c15704ef16acd3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - HeroValues: {fileID: 11400000, guid: 8ac63f86fa4bbed43bbb4cbbb105795a, type: 2}
+  - Trigger: {instanceID: 0}
+  - ActionLevel0: {instanceID: 0}
+  - ActionLevel1: {instanceID: 0}
+  - ActionLevel2: {instanceID: 0}
+  - ActionLevel3: {instanceID: 0}
+  - ActionLevel4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

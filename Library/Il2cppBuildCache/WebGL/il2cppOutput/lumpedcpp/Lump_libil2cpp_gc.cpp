@@ -1,0 +1,7 @@
+#include "il2cpp-config.h"
+#include "G:\Game\2020.3.33f1\Editor\Data\il2cpp\libil2cpp\gc\BoehmGC.cpp"
+#include "G:\Game\2020.3.33f1\Editor\Data\il2cpp\libil2cpp\gc\GCHandle.cpp"
+#include "G:\Game\2020.3.33f1\Editor\Data\il2cpp\libil2cpp\gc\GarbageCollector.cpp"
+#include "G:\Game\2020.3.33f1\Editor\Data\il2cpp\libil2cpp\gc\NullGC.cpp"
+#include "G:\Game\2020.3.33f1\Editor\Data\il2cpp\libil2cpp\gc\WriteBarrier.cpp"
+#include "G:\Game\2020.3.33f1\Editor\Data\il2cpp\libil2cpp\gc\WriteBarrierValidation.cpp"
