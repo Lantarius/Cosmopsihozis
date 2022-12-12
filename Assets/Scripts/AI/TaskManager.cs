@@ -18,13 +18,18 @@ public class TaskManager : MonoBehaviour
     [HideInInspector]
     public GameObject target;
     [Header("UI")]
-    [SerializeField] TMP_Text CurrentTaskName;
     [SerializeField] TaskIndicator taskIndicator;
     void Start()
     {
-        StartNewTask();
+        if (tasks.Count > 0)
+        {
+            StartNewTask();
+        }
     }
-    public void LoadLocationProperties() { }
+    public void LoadLocationProperties() 
+    {
+
+    }
     public void ResetLocationProperties()
     {
         CurrentLocation = null;
@@ -35,21 +40,9 @@ public class TaskManager : MonoBehaviour
         CurrentTask = tasks[CurrentTaskId];
         CurrentTask.StartTask();
         CurrentTaskId++;
-        if (!IsItNPC) 
+        if (!IsItNPC)
         {
             taskIndicator.UpdateCurrentTaskText(CurrentTask);
         }
-        UpdateCurrentTaskNameText();
     }
-    public void UpdateCurrentTaskNameText()
-    {
-        if (name == "Player")
-        {
-            if (CurrentTask != null)
-            {
-                CurrentTaskName.text = CurrentTask.Name;
-            }
-        }
-    }
-
 }

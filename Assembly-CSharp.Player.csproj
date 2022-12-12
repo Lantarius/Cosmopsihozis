@@ -59,9 +59,10 @@
     <Compile Include="Assets\Scripts\Events\Event.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Events\Events\GoToTheTarget.cs" />
+    <Compile Include="Assets\Scripts\UI\TaskIndicator.cs" />
     <Compile Include="Assets\Scripts\Actions\Level 4\Action_4_4.cs" />
     <Compile Include="Assets\Scripts\Location\Locations\Room2.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\AI\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Actions\Level 1\Action_3_1.cs" />
     <Compile Include="Assets\Scripts\KnownKnowledge.cs" />
     <Compile Include="Assets\Scripts\AI\Tasks\LeaveRoom.cs" />
@@ -85,8 +86,6 @@
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Scripts\Actions\Level 1\Door_4_1.cs" />
     <Compile Include="Assets\Scripts\Events\Events\TurnLightOff.cs" />
-    <Compile Include="Assets\Scripts\UI\TaskIndicator.cs" />
-    <Compile Include="Assets\Scripts\AI\NPCTaskManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Events\README.txt" />

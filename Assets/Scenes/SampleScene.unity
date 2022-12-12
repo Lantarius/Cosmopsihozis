@@ -4264,7 +4264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f04d3ab94b604247a1972b130c1cd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentTaskName: {fileID: 0}
+  CurrentTaskText: {fileID: 1081464235}
 --- !u!114 &1761946450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5747,7 +5747,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
+    - target: {fileID: 1854264321613086943, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
+      propertyPath: IsItNPC
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854264321613086943, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
+      propertyPath: tasks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854264321613086943, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
       propertyPath: tasks.Array.data[0]
       value: 
       objectReference: {fileID: 1553972735}
@@ -5795,9 +5803,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6237247276758813898, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
+      propertyPath: avoidancePriority
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 6237247276758813900, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6237247276758813900, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}

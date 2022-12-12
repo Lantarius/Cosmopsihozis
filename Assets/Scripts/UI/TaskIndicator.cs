@@ -5,10 +5,10 @@ using TMPro;
 
 public class TaskIndicator : MonoBehaviour
 {
-    private TaskManager _taskManager;
-    [SerializeField] TMP_Text CurrentTaskName;
+    [SerializeField] TMP_Text CurrentTaskText;
     public void UpdateCurrentTaskText(Task CurrentTask)
     {
-
+        CurrentTaskText.text = CurrentTask.Name;
+        Debug.Log(CurrentTask.name);
     }
 }

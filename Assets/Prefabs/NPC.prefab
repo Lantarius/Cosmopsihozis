@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6237247276758813897}
   - component: {fileID: 6237247276758813893}
   - component: {fileID: 6237247276758813898}
-  - component: {fileID: -5926362096036690170}
-  - component: {fileID: 6237247276758813899}
+  - component: {fileID: 1854264321613086943}
+  - component: {fileID: -144745261976670834}
   m_Layer: 3
   m_Name: NPC
   m_TagString: Untagged
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1e13f2b47bfad7345b0810b28b80237a, type: 2}
+  - {fileID: 2100000, guid: 9e6a4e541aa657e448ee5412732ebaf6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-5926362096036690170
+--- !u!114 &1854264321613086943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,16 +146,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6237247276758813900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fdc556ea055ba04598bdadf9acba7bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b977515bc54d744cb36fc1d146967b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IsItNPC: 0
+  CurrentLocation: {fileID: 0}
   taskLocation: {fileID: 0}
   tasks: []
   CurrentTask: {fileID: 0}
   CurrentTaskId: 0
   target: {fileID: 0}
---- !u!114 &6237247276758813899
+  CurrentTaskName: {fileID: 0}
+  taskIndicator: {fileID: 0}
+--- !u!114 &-144745261976670834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
