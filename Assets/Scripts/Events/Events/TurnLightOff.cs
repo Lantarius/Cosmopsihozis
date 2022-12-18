@@ -7,15 +7,15 @@ public class TurnLightOff : Event
     public Location location;
     public override void StartEvent()
     {
+        location = _taskManager.taskLocation;
         StopPreviousEvent();
-        IsEventEnd = false;
         if (location != null && target != null && location.IsLightsOn)
         {
             StartCoroutine(SwitchLight());
         }
         else
         {
-            IsEventEnd = true;
+            StartNextEvent();
         }
     }
     IEnumerator SwitchLight()
@@ -25,6 +25,6 @@ public class TurnLightOff : Event
         yield return new WaitUntil(() => IsPlayerReachDestanation());
         location.IsLightsOn = false;
         location.SwitchLights();
-        IsEventEnd = true;
+        StartNextEvent();
     }
 }

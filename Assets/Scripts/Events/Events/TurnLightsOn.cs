@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class TurnLightsOn : Event
 {
-    public Location location;
+    private Location location;
     public override void StartEvent()
     {
+        location = _taskManager.taskLocation;
         StopPreviousEvent();
-        IsEventEnd = false;
         if (location != null && target != null && !location.IsLightsOn)
         {
             StartCoroutine(SwitchLight());
         }
         else
         {
-            IsEventEnd = true;
+            StartNextEvent();
         }
     }
     IEnumerator SwitchLight()
     {
-        _taskManager.target = target;
+        GoToTarget();
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => IsPlayerReachDestanation());
         location.IsLightsOn = true;
         location.SwitchLights();
-        IsEventEnd = true;
+        StartNextEvent();
     }
 }

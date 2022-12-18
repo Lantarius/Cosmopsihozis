@@ -8,7 +8,6 @@ public class TaskIndicator : MonoBehaviour
     [SerializeField] TMP_Text CurrentTaskText;
     public void UpdateCurrentTaskText(Task CurrentTask)
     {
-        CurrentTaskText.text = CurrentTask.Name;
-        Debug.Log(CurrentTask.name);
+        CurrentTaskText.text = CurrentTask.TaskName;
     }
 }

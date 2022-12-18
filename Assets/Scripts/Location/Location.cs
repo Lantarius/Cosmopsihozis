@@ -11,6 +11,10 @@ public class Location : MonoBehaviour
     public bool IsLightsOn;
     [Header("Location entry/exit")]
     public GameObject Door;
+    private Vector3 targetPosition;
+    private Vector3 startPosition;
+    public float DoorTransferDistance;
+    public float DoorTransferTime;
     public bool IsDoorOpen;
     [Header("Camera Settings")]
     public bool IsCameraFixed;
@@ -19,6 +23,8 @@ public class Location : MonoBehaviour
     {
         SetLocationName();
         SwitchLights();
+        startPosition = Door.transform.position;
+        targetPosition = startPosition + Vector3.up * DoorTransferDistance;
     }
 
     public void SwitchLights()
@@ -31,6 +37,10 @@ public class Location : MonoBehaviour
         {
             Lights.gameObject.SetActive(false);
         }
+    }
+    public void SwitchDoorPosition()
+    {
+        StartCoroutine(DoorTransfer());
     }
     protected void SetLocationName()
     {
@@ -51,5 +61,26 @@ public class Location : MonoBehaviour
     {
         other.gameObject.TryGetComponent<TaskManager>(out TaskManager taskManager);
         taskManager.ResetLocationProperties();
+    }
+    IEnumerator DoorTransfer()
+    {
+        if (!IsDoorOpen)
+        {
+            for (float i = 0; i < DoorTransferTime; i += Time.deltaTime)
+            {
+                Door.transform.position = Vector3.Lerp(startPosition, targetPosition, i);
+                yield return null;
+            }
+            IsDoorOpen = true;
+        }
+        else
+        {
+            for (float i = 0; i < DoorTransferTime; i += Time.deltaTime)
+            {
+                Door.transform.position = Vector3.Lerp(Door.transform.position, startPosition, i);
+                yield return null;
+            }
+            IsDoorOpen = false;
+        }
     }
 }

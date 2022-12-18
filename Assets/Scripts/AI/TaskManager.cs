@@ -15,12 +15,15 @@ public class TaskManager : MonoBehaviour
     public List<Task> tasks;
     public Task CurrentTask;
     public int CurrentTaskId;
-    [HideInInspector]
-    public GameObject target;
     [Header("UI")]
     [SerializeField] TaskIndicator taskIndicator;
+    [HideInInspector]
+    public GameObject target;
+    [HideInInspector]
+    public PlayerController playerController;
     void Start()
     {
+        playerController= GetComponent<PlayerController>();
         if (tasks.Count > 0)
         {
             StartNewTask();
@@ -36,8 +39,8 @@ public class TaskManager : MonoBehaviour
     }
     public void StartNewTask()
     {
-        //Update CurrentTask
         CurrentTask = tasks[CurrentTaskId];
+        CurrentTask._taskManager = this;
         CurrentTask.StartTask();
         CurrentTaskId++;
         if (!IsItNPC)

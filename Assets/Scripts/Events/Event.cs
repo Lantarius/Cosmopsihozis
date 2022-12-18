@@ -4,33 +4,24 @@ using UnityEngine;
 
 public class Event : MonoBehaviour
 {
+    public string EventName;
     [Header("Debug")]
-    [SerializeField] protected TaskManager _taskManager;
-    [SerializeField] protected Task Task;
-    [SerializeField] protected PlayerController _playerController;
-    [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] protected Vector3 playerPosition;
+    protected Vector3 targetPosition;
+    protected Vector3 playerPosition;
     [Header("Required Feilds")]
     [SerializeField] protected GameObject target;
     [HideInInspector]
-    public bool IsEventEnd;
-    void Start()
-    {
-        Task = GetComponent<Task>();
-        if (Task.IsItNPC)
-        {
-            _taskManager = Task.ControlledCreature.GetComponent<TaskManager>();
-            _playerController = Task.ControlledCreature.GetComponent<PlayerController>();
-        }
-        else
-        {
-            _taskManager = GameObject.Find("Player").GetComponent<TaskManager>();
-            _playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        }
-    }
+    public TaskManager _taskManager;
+    [HideInInspector]
+    public PlayerController _playerController;
     public virtual void StartEvent()
     {
 
+    }
+    protected void StartNextEvent()
+    {
+        _taskManager.CurrentTask.CurrentEventId++;
+        _taskManager.CurrentTask.StartEvent();
     }
     protected void StopPreviousEvent()
     {
@@ -39,13 +30,24 @@ public class Event : MonoBehaviour
             _taskManager.CurrentTask.events[_taskManager.CurrentTask.CurrentEventId - 1].StopAllCoroutines();
         }
     }
+    protected void StartEventBar()
+    {
+
+    }
+    protected void GoToTarget()
+    {
+        if (target != null)
+        {
+            _taskManager.target = target;
+        }
+    }
     protected bool IsPlayerReachDestanation()
     {
         playerPosition = _playerController.Player.transform.position;
         playerPosition.y = 0;
         targetPosition = target.transform.position;
         targetPosition.y = 0;
-        
+
         if (playerPosition == targetPosition)
         {
             return true;
