@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 5745621410380923264}
   - component: {fileID: 5745621410380923271}
   - component: {fileID: 5745621410380923270}
-  - component: {fileID: 5745621410380923269}
-  - component: {fileID: 1985769176554734579}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -97,40 +95,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5745621410380923269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5745621410380923275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e782b77d62ae55c408c15704ef16acd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ActionMenu: {fileID: 0}
-  IsNeededAdditonAction: 0
-  ActionLevel0: {fileID: 0}
-  ActionLevel1: {fileID: 1985769176554734579}
-  ActionLevel2: {fileID: 0}
-  ActionLevel3: {fileID: 0}
-  ActionLevel4: {fileID: 0}
---- !u!114 &1985769176554734579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5745621410380923275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a4a5977a902baa49b67ba651f6415e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Values: {fileID: 0}
-  ButtonText: Place holder
-  clAddValue: 0
-  rwpAddValue: 0
-  Knowledge: {fileID: 0}
-  taskManager: {fileID: 0}

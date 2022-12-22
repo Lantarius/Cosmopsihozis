@@ -6,7 +6,7 @@ public class ObjectInteractionZone : MonoBehaviour
 {
     [SerializeField] private ObjectController IntaractibleObject;
     [SerializeField] private ActionSelector ActionSelectorMenu;
-    void Start()
+    void Awake()
     {
         IntaractibleObject = GetComponentInParent<ObjectController>();
         IntaractibleObject.InteractionZone = gameObject;
@@ -16,7 +16,14 @@ public class ObjectInteractionZone : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            IntaractibleObject.SetActionsIntoUI();
+            for(int i = 0; i < IntaractibleObject.availableAction.Count; i++)
+            {
+                if (IntaractibleObject.availableAction[i] != null)
+                {
+                    ActionSelectorMenu.objectAction[i] = IntaractibleObject.availableAction[i];
+                }
+            }
+            ActionSelectorMenu.SetActionsIntoUI();
             ActionSelectorMenu.ActionMenu.gameObject.SetActive(true);
         }
     }
@@ -24,7 +31,11 @@ public class ObjectInteractionZone : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            IntaractibleObject.CleanButtons();
+            for (int i = 0; i < IntaractibleObject.availableAction.Count; i++)
+            {
+                ActionSelectorMenu.objectAction[i] = null;
+            }
+            ActionSelectorMenu.CleanButtons();
             ActionSelectorMenu.ActionMenu.gameObject.SetActive(false);
         }
     }

@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class TurnLightsOn : Event
 {
-    private Location location;
+    public Location location;
     public override void StartEvent()
     {
-        location = _taskManager.taskLocation;
+        if (location == null)
+        {
+            location = _taskManager.taskLocation;
+        }
         StopPreviousEvent();
         if (location != null && target != null && !location.IsLightsOn)
         {

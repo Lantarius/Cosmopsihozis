@@ -13,7 +13,6 @@ public class Event : MonoBehaviour
     [HideInInspector]
     public TaskManager _taskManager;
     [HideInInspector]
-    public PlayerController _playerController;
     public virtual void StartEvent()
     {
 
@@ -38,12 +37,19 @@ public class Event : MonoBehaviour
     {
         if (target != null)
         {
-            _taskManager.target = target;
+            target.TryGetComponent(out ObjectController objectController);
+            {
+                if(objectController != null)
+                {
+                    target = objectController.InteractionZone;
+                }
+            }
+            _taskManager.agent.SetDestination(target.transform.position);
         }
     }
     protected bool IsPlayerReachDestanation()
     {
-        playerPosition = _playerController.Player.transform.position;
+        playerPosition = _taskManager.Player.transform.position;
         playerPosition.y = 0;
         targetPosition = target.transform.position;
         targetPosition.y = 0;

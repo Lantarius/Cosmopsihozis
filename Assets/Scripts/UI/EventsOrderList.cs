@@ -7,12 +7,12 @@ public class EventsOrderList : MonoBehaviour
     [SerializeField] GameObject EventBar;
     Vector3 PivotPosition;
     Vector3 DefaultPivotPosition;
-    TaskManager _taskManager;
+    PlayerTaskManager _taskManager;
     private void Start()
     {
         DefaultPivotPosition = transform.position;
         PivotPosition = DefaultPivotPosition;
-        _taskManager = GameObject.Find("Player").GetComponent<TaskManager>();
+        _taskManager = GameObject.Find("Player").GetComponent<PlayerTaskManager>();
         StartCoroutine(GeneteateEventBars());
     }
     IEnumerator GeneteateEventBars()

@@ -44,8 +44,7 @@ GameObject:
   - component: {fileID: 6237247276758813897}
   - component: {fileID: 6237247276758813893}
   - component: {fileID: 6237247276758813898}
-  - component: {fileID: 1854264321613086943}
-  - component: {fileID: -144745261976670834}
+  - component: {fileID: -2089438428215653343}
   m_Layer: 3
   m_Name: NPC
   m_TagString: Untagged
@@ -168,7 +167,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1854264321613086943
+--- !u!114 &-2089438428215653343
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,30 +176,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6237247276758813900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b977515bc54d744cb36fc1d146967b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 92e3d5e4608dea2469e309dac35341ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsItNPC: 0
-  CurrentLocation: {fileID: 0}
   taskLocation: {fileID: 0}
   tasks: []
   CurrentTask: {fileID: 0}
   CurrentTaskId: 0
-  taskIndicator: {fileID: 0}
-  target: {fileID: 0}
-  playerController: {fileID: 0}
---- !u!114 &-144745261976670834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6237247276758813900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3bc818616b6254fb6be2f2092790fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsPlayerHaveControl: 0
   Player: {fileID: 0}
   agent: {fileID: 0}

@@ -53,14 +53,19 @@ public class Location : MonoBehaviour
     public virtual void CustomProperties() { }
     void OnTriggerEnter(Collider other)
     {
-        other.gameObject.TryGetComponent<TaskManager>(out TaskManager taskManager);
-        taskManager.CurrentLocation = this;
-        taskManager.LoadLocationProperties();
+        if (other.name == "Player")
+        {
+            other.gameObject.TryGetComponent<PlayerTaskManager>(out PlayerTaskManager taskManager);
+            taskManager.CurrentLocation = this;
+        }
     }
     void OnTriggerExit(Collider other)
     {
-        other.gameObject.TryGetComponent<TaskManager>(out TaskManager taskManager);
-        taskManager.ResetLocationProperties();
+        if (other.name == "Player")
+        {
+            other.gameObject.TryGetComponent<PlayerTaskManager>(out PlayerTaskManager taskManager);
+            taskManager.ResetLocationProperties();
+        }
     }
     IEnumerator DoorTransfer()
     {
@@ -80,7 +85,7 @@ public class Location : MonoBehaviour
                 Door.transform.position = Vector3.Lerp(Door.transform.position, startPosition, i);
                 yield return null;
             }
-            IsDoorOpen = false;
+            IsDoorOpen = false; 
         }
     }
 }

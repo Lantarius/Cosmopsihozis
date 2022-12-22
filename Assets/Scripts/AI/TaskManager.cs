@@ -1,51 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.AI;
 
 public class TaskManager : MonoBehaviour
 {
-    [Space(5)]
-    [SerializeField] bool IsItNPC;
-    [Space(10)]
     [Header("Location")]
-    public Location CurrentLocation;
     public Location taskLocation;
     [Space(10)]
     public List<Task> tasks;
+    [HideInInspector]
     public Task CurrentTask;
+    [HideInInspector]
     public int CurrentTaskId;
-    [Header("UI")]
-    [SerializeField] TaskIndicator taskIndicator;
     [HideInInspector]
-    public GameObject target;
+    public GameObject Player;
     [HideInInspector]
-    public PlayerController playerController;
-    void Start()
+    public NavMeshAgent agent;
+    private void Awake()
     {
-        playerController= GetComponent<PlayerController>();
+        agent = GetComponent<NavMeshAgent>();
+        Player = gameObject;
+    }
+    public void StartTask()
+    {
         if (tasks.Count > 0)
         {
-            StartNewTask();
+            NextTask();
         }
-    }
-    public void LoadLocationProperties() 
-    {
-
-    }
-    public void ResetLocationProperties()
-    {
-        CurrentLocation = null;
-    }
-    public void StartNewTask()
+    }    
+    public virtual void NextTask()
     {
         CurrentTask = tasks[CurrentTaskId];
         CurrentTask._taskManager = this;
         CurrentTask.StartTask();
         CurrentTaskId++;
-        if (!IsItNPC)
-        {
-            taskIndicator.UpdateCurrentTaskText(CurrentTask);
-        }
     }
 }

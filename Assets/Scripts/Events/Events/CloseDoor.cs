@@ -6,8 +6,7 @@ public class CloseDoor : Event
 {
     public override void StartEvent()
     {
-        target = _taskManager.taskLocation.Door.GetComponent<ObjectController>().InteractionZone;
-        if (target != null && _taskManager.taskLocation.IsDoorOpen && _taskManager.taskLocation.Door != null)
+        if (target != null && _taskManager.taskLocation.Door != null)
         {
             StartCoroutine(SwitchDoorPosition());
         }
@@ -18,10 +17,13 @@ public class CloseDoor : Event
     }
     IEnumerator SwitchDoorPosition()
     {
-        GoToTarget();
-        yield return new WaitUntil(() => IsPlayerReachDestanation());
-        _taskManager.taskLocation.SwitchDoorPosition();
-        yield return new WaitForSeconds(_taskManager.taskLocation.DoorTransferTime);
+        while(_taskManager.taskLocation.IsDoorOpen)
+        {
+            GoToTarget();
+            yield return new WaitUntil(() => IsPlayerReachDestanation());
+            _taskManager.taskLocation.SwitchDoorPosition();
+            yield return new WaitForSeconds(_taskManager.taskLocation.DoorTransferTime);
+        }
         StartNextEvent();
     }
 }

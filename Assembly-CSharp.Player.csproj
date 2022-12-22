@@ -60,10 +60,8 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Events\Events\GoToTheTarget.cs" />
     <Compile Include="Assets\Scripts\UI\TaskIndicator.cs" />
-    <Compile Include="Assets\Scripts\Action\Level 4\Action_4_4.cs" />
+    <Compile Include="Assets\Scripts\Action\Level 4\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\Location\Locations\Room2.cs" />
-    <Compile Include="Assets\Scripts\AI\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\AI\NPC.cs" />
     <Compile Include="Assets\Scripts\KnownKnowledge.cs" />
     <Compile Include="Assets\Scripts\AI\Tasks\LeaveRoom.cs" />
     <Compile Include="Assets\Scripts\Location\Locations\Room.cs" />
@@ -73,6 +71,7 @@
     <Compile Include="Assets\Scripts\Events\Events\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\Action\ObjectAction.cs" />
     <Compile Include="Assets\Scripts\UI\EventIndicator.cs" />
+    <Compile Include="Assets\Scripts\Events\Events\CloseDoor.cs" />
     <Compile Include="Assets\Scripts\AI\Task.cs" />
     <Compile Include="Assets\Scripts\AI\Tasks\EnterRoom.cs" />
     <Compile Include="Assets\Scripts\Events\Events\TurnLightsOn.cs" />
@@ -81,13 +80,14 @@
     <Compile Include="Assets\Scripts\ObjectInteractionZone.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\UI\ActionSelector.cs" />
-    <Compile Include="Assets\Scripts\AI\TaskManager.cs" />
+    <Compile Include="Assets\Scripts\AI\Player\PlayerTaskManager.cs" />
     <Compile Include="Assets\Scripts\ObjectController.cs" />
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Scripts\Action\Level 1\Door.cs" />
     <Compile Include="Assets\Scripts\Events\Events\TurnLightOff.cs" />
     <Compile Include="Assets\Scripts\UI\EventsOrderList.cs" />
-    <Compile Include="Assets\Scripts\Events\Events\CloseDoor.cs" />
+    <Compile Include="Assets\Scripts\AI\NPC\NPCTaskManager.cs" />
+    <Compile Include="Assets\Scripts\AI\TaskManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Events\README.txt" />

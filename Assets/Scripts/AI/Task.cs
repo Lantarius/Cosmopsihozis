@@ -7,8 +7,6 @@ public class Task : MonoBehaviour
 {
     [Space(5)]
     [SerializeField] public string TaskName;
-    [Header("For NPC")]
-    [SerializeField] public bool IsItNPC;
     [Header("Location")]
     public Location TaskLocation;
     [Space(10)]
@@ -18,7 +16,7 @@ public class Task : MonoBehaviour
     [HideInInspector]
     public int CurrentEventId;
     [HideInInspector]
-    [SerializeField] private Event CurrentEvent;
+    private Event CurrentEvent;
 
     public void StartTask()
     {
@@ -34,17 +32,13 @@ public class Task : MonoBehaviour
             {
                 CurrentEvent._taskManager = _taskManager;
             }
-            if (CurrentEvent._playerController == null)
-            {
-                CurrentEvent._playerController = _taskManager.playerController;
-            }
             CurrentEvent.StartEvent();
         }
         else
         {
             if (_taskManager.CurrentTaskId < _taskManager.tasks.Count)
             {
-                _taskManager.StartNewTask();
+                _taskManager.NextTask();
                 Debug.Log("This is last event, starting next task");
             }
             else

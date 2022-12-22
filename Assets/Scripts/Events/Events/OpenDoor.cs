@@ -6,7 +6,6 @@ public class OpenDoor : Event
 {
     public override void StartEvent()
     {
-        target = _taskManager.taskLocation.Door.GetComponent<ObjectController>().InteractionZone;
         if (target != null && !_taskManager.taskLocation.IsDoorOpen && _taskManager.taskLocation.Door != null)
         {
             StartCoroutine(SwitchDoorPosition());

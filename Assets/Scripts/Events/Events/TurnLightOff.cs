@@ -7,8 +7,10 @@ public class TurnLightOff : Event
     public Location location;
     public override void StartEvent()
     {
-        location = _taskManager.taskLocation;
-        StopPreviousEvent();
+        if(location == null)
+        {
+            location = _taskManager.taskLocation;
+        }
         if (location != null && target != null && location.IsLightsOn)
         {
             StartCoroutine(SwitchLight());
@@ -20,7 +22,7 @@ public class TurnLightOff : Event
     }
     IEnumerator SwitchLight()
     {
-        _taskManager.target = target;
+        GoToTarget();
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => IsPlayerReachDestanation());
         location.IsLightsOn = false;

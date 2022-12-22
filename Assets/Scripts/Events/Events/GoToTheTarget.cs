@@ -18,7 +18,7 @@ public class GoToTheTarget : Event
     }
     IEnumerator StartWalkToTarget()
     {
-        _taskManager.target = target;
+        GoToTarget();
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => IsPlayerReachDestanation());
         StartNextEvent();
