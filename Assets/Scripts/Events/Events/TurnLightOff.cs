@@ -7,7 +7,7 @@ public class TurnLightOff : Event
     public Location location;
     public override void StartEvent()
     {
-        if(location == null)
+        if (location == null)
         {
             location = _taskManager.taskLocation;
         }
@@ -22,11 +22,17 @@ public class TurnLightOff : Event
     }
     IEnumerator SwitchLight()
     {
-        GoToTarget();
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => IsPlayerReachDestanation());
-        location.IsLightsOn = false;
-        location.SwitchLights();
+        target.TryGetComponent(out ObjectController TargetController);
+        target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+        while (location.IsLightsOn)
+        {
+            GoTo(target);
+            if (IsReach(target))
+            {
+                location.SwitchLights();
+            }
+            yield return null;
+        }
         StartNextEvent();
     }
 }

@@ -33,31 +33,29 @@ public class Event : MonoBehaviour
     {
 
     }
-    protected void GoToTarget()
+    protected void GoTo(GameObject target)
     {
-        if (target != null)
+        if (target.TryGetComponent(out ObjectController objectController))
         {
-            target.TryGetComponent(out ObjectController objectController);
-            {
-                if(objectController != null)
-                {
-                    target = objectController.InteractionZone;
-                }
-            }
-            _taskManager.agent.SetDestination(target.transform.position);
+            target = objectController.InteractionZone;
         }
+        _taskManager.agent.SetDestination(target.transform.position);
     }
-    protected bool IsPlayerReachDestanation()
-    {
-        playerPosition = _taskManager.Player.transform.position;
-        playerPosition.y = 0;
-        targetPosition = target.transform.position;
-        targetPosition.y = 0;
+protected bool IsReach(GameObject target)
+{
+    playerPosition = _taskManager.Creature.transform.position;
+    playerPosition.y = 0;
+    targetPosition = target.transform.position;
+    targetPosition.y = 0;
 
-        if (playerPosition == targetPosition)
-        {
-            return true;
-        }
-        else return false;
+    if (playerPosition == targetPosition)
+    {
+        return true;
     }
+    else return false;
+}
+protected float DistanceTo(GameObject target)
+{
+    return Vector3.Distance(_taskManager.Creature.transform.position, target.transform.position);
+}
 }

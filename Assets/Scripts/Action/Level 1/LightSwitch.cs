@@ -17,7 +17,6 @@ public class LightSwitch : ObjectAction
     }
     override public void DoAction()
     {
-        Location.IsLightsOn = !Location.IsLightsOn;
         Location.SwitchLights();
         UpdateControlLevel();
         Start();

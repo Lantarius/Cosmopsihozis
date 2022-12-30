@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-public class Task : MonoBehaviour 
+public class Task : MonoBehaviour
 {
     [Space(5)]
     [SerializeField] public string TaskName;
@@ -39,13 +39,7 @@ public class Task : MonoBehaviour
             if (_taskManager.CurrentTaskId < _taskManager.tasks.Count)
             {
                 _taskManager.NextTask();
-                Debug.Log("This is last event, starting next task");
-            }
-            else
-            {
-                Debug.Log("This is the end!");
             }
         }
-
     }
 }

@@ -24,6 +24,8 @@ ScriptsOnlyBuild:
     - TurnLightsOn
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
+    NavMeshComponentsEditor.dll:
+    - UnityEditor.AI.NavMeshAssetManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -84,73 +86,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1462}
     - Class: 114
-      Script: {instanceID: 1638}
+      Script: {instanceID: 1636}
     - Class: 114
-      Script: {instanceID: 1642}
+      Script: {instanceID: 1640}
     - Class: 114
-      Script: {instanceID: 1672}
+      Script: {instanceID: 1670}
+    - Class: 114
+      Script: {instanceID: 1752}
     - Class: 114
       Script: {instanceID: 1754}
     - Class: 114
-      Script: {instanceID: 1756}
+      Script: {instanceID: 1804}
     - Class: 114
-      Script: {instanceID: 1806}
+      Script: {instanceID: 1970}
     - Class: 114
-      Script: {instanceID: 1972}
+      Script: {instanceID: 2014}
     - Class: 114
       Script: {instanceID: 2048}
     - Class: 114
       Script: {instanceID: 2060}
     - Class: 114
+      Script: {instanceID: 2362}
+    - Class: 114
       Script: {instanceID: 2366}
     - Class: 114
-      Script: {instanceID: 2370}
+      Script: {instanceID: 2474}
     - Class: 114
       Script: {instanceID: 2478}
     - Class: 114
-      Script: {instanceID: 2482}
+      Script: {instanceID: 2520}
     - Class: 114
-      Script: {instanceID: 2524}
+      Script: {instanceID: 2654}
     - Class: 114
-      Script: {instanceID: 2658}
+      Script: {instanceID: 2698}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2746}
     - Class: 114
-      Script: {instanceID: 2750}
+      Script: {instanceID: 2762}
     - Class: 114
-      Script: {instanceID: 2766}
+      Script: {instanceID: 2780}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2852}
     - Class: 114
-      Script: {instanceID: 2856}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 2946}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3062}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3378}
+      Script: {instanceID: 3494}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3518}
     - Class: 114
-      Script: {instanceID: 3522}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3918}
     - Class: 114
-      Script: {instanceID: 3922}
+      Script: {instanceID: 4024}
     - Class: 114
-      Script: {instanceID: 4028}
+      Script: {instanceID: 4034}
     - Class: 114
-      Script: {instanceID: 4038}
+      Script: {instanceID: 4190}
     - Class: 114
-      Script: {instanceID: 4194}
+      Script: {instanceID: 4378}
     - Class: 114
-      Script: {instanceID: 4380}
+      Script: {instanceID: 4566}
     - Class: 114
-      Script: {instanceID: 4568}
-    - Class: 114
-      Script: {instanceID: 4612}
-    - Class: 114
-      Script: {instanceID: 27008}
+      Script: {instanceID: 4610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -302,6 +304,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: dc2b269c465b42a821007604bd591b9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NPCTaskManager
   - hash:
       serializedVersion: 2
       Hash: 800c50acba124432abb4cf0d47202e06
@@ -478,7 +486,7 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
-      Hash: 3c13a354f0bf7d7c9924d583cb858255
+      Hash: dc12d4f3a9f3061909341d6abb4d147a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EventIndicator
@@ -562,7 +570,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 58a64dd46caa662bdb867df39d2fc340
+      Hash: 613ac819c28e75f9f023dab980911c72
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TurnLightsOn
@@ -778,7 +786,7 @@ ScriptsOnlyBuild:
     className: NavMeshPrefabInstance
   - hash:
       serializedVersion: 2
-      Hash: ef6d5b7eba12a1c0f23646b2a3fde8e8
+      Hash: e9c777a631db1b642e88895413ae2aa3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerTaskManager
@@ -824,6 +832,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataManager
+  - hash:
+      serializedVersion: 2
+      Hash: dc2b269c465b42a821007604bd591b9e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TaskManager
   - hash:
       serializedVersion: 2
       Hash: 1f1a3b63bcb87e63110a26427883b8e5
@@ -886,16 +900,10 @@ ScriptsOnlyBuild:
     className: EventsOrderList
   - hash:
       serializedVersion: 2
-      Hash: e9ba4b889eeec631bd7ab8f0cebdb1d5
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: NPCTaskManager
-  - hash:
-      serializedVersion: 2
-      Hash: e9ba4b889eeec631bd7ab8f0cebdb1d5
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TaskManager
+    className: DialogueBox
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

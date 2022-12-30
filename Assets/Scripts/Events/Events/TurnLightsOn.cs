@@ -11,7 +11,6 @@ public class TurnLightsOn : Event
         {
             location = _taskManager.taskLocation;
         }
-        StopPreviousEvent();
         if (location != null && target != null && !location.IsLightsOn)
         {
             StartCoroutine(SwitchLight());
@@ -23,11 +22,17 @@ public class TurnLightsOn : Event
     }
     IEnumerator SwitchLight()
     {
-        GoToTarget();
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => IsPlayerReachDestanation());
-        location.IsLightsOn = true;
-        location.SwitchLights();
+        target.TryGetComponent(out ObjectController TargetController);
+        target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+        while (!location.IsLightsOn)
+        {
+            GoTo(target);
+            if (IsReach(target))
+            {
+                location.SwitchLights();
+            }
+            yield return null;
+        }
         StartNextEvent();
     }
 }

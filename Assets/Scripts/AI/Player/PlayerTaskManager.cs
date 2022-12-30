@@ -8,7 +8,7 @@ public class PlayerTaskManager : TaskManager
 {
     [Header("UI")]
     [SerializeField] TaskIndicator taskIndicator;
-    public Location CurrentLocation;
+    [SerializeField] EventsOrderList EventList;
     [HideInInspector]
     private Camera mainCamera;
 
@@ -17,13 +17,26 @@ public class PlayerTaskManager : TaskManager
         mainCamera = Camera.main;
         StartTask();
     }
-    public void ResetLocationProperties()
-    {
-        CurrentLocation = null;
-    }
     public override void NextTask()
     {
         base.NextTask();
+
+        EventsOrderList.MoveEventBar();
+
         taskIndicator.UpdateCurrentTaskText(CurrentTask);
+
+        StartCoroutine(CheckEvent());
+    }
+    IEnumerator CheckEvent()
+    {
+        EventList.GeneteateEventBars();
+        int EventID = 0;
+        while(EventID <= CurrentTask.events.Count)
+        {
+            yield return new WaitUntil(() => CurrentTask.CurrentEventId > EventID);
+            EventID++;
+            EventsOrderList.MoveEventBar();
+        }
+        yield return null;
     }
 }

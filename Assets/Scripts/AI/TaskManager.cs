@@ -7,6 +7,7 @@ public class TaskManager : MonoBehaviour
 {
     [Header("Location")]
     public Location taskLocation;
+    public Location CurrentLocation;
     [Space(10)]
     public List<Task> tasks;
     [HideInInspector]
@@ -14,13 +15,13 @@ public class TaskManager : MonoBehaviour
     [HideInInspector]
     public int CurrentTaskId;
     [HideInInspector]
-    public GameObject Player;
+    public GameObject Creature;
     [HideInInspector]
     public NavMeshAgent agent;
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        Player = gameObject;
+        Creature = gameObject;
     }
     public void StartTask()
     {
@@ -35,5 +36,10 @@ public class TaskManager : MonoBehaviour
         CurrentTask._taskManager = this;
         CurrentTask.StartTask();
         CurrentTaskId++;
+    }
+
+    public void ResetLocationProperties()
+    {
+        CurrentLocation = null;
     }
 }
