@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class TurnLightsOn : Event
 {
-    public Location location;
+    ObjectController TargetController;
+    private void Start()
+    {
+        TargetController = target.GetComponent<ObjectController>();
+    }
     public override void StartEvent()
     {
-        if (location != null && target != null && !location.IsLightsOn)
+        StartCoroutine(SwitchLight());
+    }
+    IEnumerator SwitchLight()
+    {
+        target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+        if (TargetController.Location != null && target != null && !TargetController.Location.IsLightsOn)
         {
-            StartCoroutine(SwitchLight());
+            while (!TargetController.Location.IsLightsOn)
+            {
+                GoTo(target);
+                if (IsReach(target))
+                {
+                    TargetController.Location.SwitchLights();
+                }
+                yield return null;
+            }
+            StartNextEvent();
         }
         else
         {
             StartNextEvent();
         }
-    }
-    IEnumerator SwitchLight()
-    {
-        target.TryGetComponent(out ObjectController TargetController);
-        target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
-        while (!location.IsLightsOn)
-        {
-            GoTo(target);
-            if (IsReach(target))
-            {
-                location.SwitchLights();
-            }
-            yield return null;
-        }
-        StartNextEvent();
+
     }
 }

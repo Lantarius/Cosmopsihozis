@@ -5,50 +5,55 @@ using UnityEngine;
 public class GoToObject : Event
 {
     [SerializeField] GameObject TargetObject;
+    ObjectController TargetController;
+    private void Start()
+    {
+        TargetController = target.GetComponent<ObjectController>();
+    }
     public override void StartEvent()
     {
+        StartCoroutine(ToObject());
+    }
+    IEnumerator ToObject()
+    {
+        bool GoalIsAchieved = false;
         if (target != null)
         {
             TargetObject = target;
-            StartCoroutine(ToObject());
+            while (!GoalIsAchieved)
+            {
+                target = TargetObject;
+                if (!TargetController.Location.IsDoorOpen)
+                {
+                    target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+                    if (IsReach(target))
+                    {
+                        TargetController.Location.SwitchDoorPosition();
+                        target = TargetObject;
+                    }
+                }
+                else if (!TargetController.Location.IsLightsOn)
+                {
+                    target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+                    if (IsReach(target))
+                    {
+                        TargetController.Location.SwitchLights();
+                        target = TargetObject;
+                    }
+                }
+                if (TargetController.Location == _taskManager.CurrentLocation && IsReach(TargetObject))
+                {
+                    GoalIsAchieved = true;
+                }
+                GoTo(target);
+                yield return null;
+            }
+            StartNextEvent();
         }
         else
         {
             StartNextEvent();
         }
-    }
-    IEnumerator ToObject()
-    {
-        target.TryGetComponent(out ObjectController TargetController);
-        bool GoalIsAchieved = false;
-        while (!GoalIsAchieved)
-        {
-            target = TargetObject;
-            if (!TargetController.Location.IsDoorOpen)
-            {
-                target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
-                if (IsReach(target))
-                {
-                    TargetController.Location.SwitchDoorPosition();
-                    target = TargetObject;
-                }
-            }
-            else if (!TargetController.Location.IsLightsOn)
-            {
-                target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
-                if (IsReach(target))
-                {
-                    TargetController.Location.SwitchLights();
-                    target = TargetObject;
-                }
-            }
-            if (TargetController.Location == _taskManager.CurrentLocation && IsReach(TargetObject))
-            {
-                GoalIsAchieved = true;
-            }
-            GoTo(target);
-            yield return null;
-        }
-        StartNextEvent();
+
     }
 }

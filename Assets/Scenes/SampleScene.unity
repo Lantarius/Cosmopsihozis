@@ -1008,7 +1008,6 @@ MonoBehaviour:
   EventName: Turn Light On
   target: {fileID: 1309477881}
   _taskManager: {fileID: 0}
-  location: {fileID: 1651846439}
 --- !u!114 &418225986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1023,6 @@ MonoBehaviour:
   EventName: Turn Light Off
   target: {fileID: 1309477881}
   _taskManager: {fileID: 0}
-  location: {fileID: 1651846439}
 --- !u!114 &418225989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,6 +1038,15 @@ MonoBehaviour:
   TaskName: Enter Room 2
   events:
   - {fileID: 418225983}
+  - {fileID: 418225985}
+  - {fileID: 418225985}
+  - {fileID: 418225986}
+  - {fileID: 418225984}
+  - {fileID: 418225984}
+  - {fileID: 418225986}
+  - {fileID: 418225984}
+  - {fileID: 418225983}
+  - {fileID: 418225985}
   - {fileID: 418225984}
   _taskManager: {fileID: 0}
   CurrentEventId: 0
@@ -2148,11 +2155,11 @@ PrefabInstance:
     - target: {fileID: 1035877452160899605, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: tasks.Array.data[0]
       value: 
-      objectReference: {fileID: 418225989}
+      objectReference: {fileID: 1029692650}
     - target: {fileID: 1035877452160899605, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: tasks.Array.data[1]
       value: 
-      objectReference: {fileID: 1029692650}
+      objectReference: {fileID: 418225989}
     - target: {fileID: 1035877452160899607, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2451,7 +2458,6 @@ MonoBehaviour:
   EventName: Turn Light On
   target: {fileID: 1309477881}
   _taskManager: {fileID: 0}
-  location: {fileID: 0}
 --- !u!114 &1029692648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2467,7 +2473,6 @@ MonoBehaviour:
   EventName: Turn Light Off
   target: {fileID: 1309477881}
   _taskManager: {fileID: 0}
-  location: {fileID: 1651846439}
 --- !u!114 &1029692649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2498,9 +2503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TaskName: Enter Room 1
   events:
-  - {fileID: 1029692648}
   - {fileID: 1029692647}
-  - {fileID: 1029692649}
   _taskManager: {fileID: 0}
   CurrentEventId: 0
 --- !u!114 &1029692652
@@ -4304,7 +4307,6 @@ MonoBehaviour:
   EventName: Turn Light On
   target: {fileID: 1309477881}
   _taskManager: {fileID: 0}
-  location: {fileID: 0}
 --- !u!114 &1769610830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4320,7 +4322,6 @@ MonoBehaviour:
   EventName: Turn Light Off
   target: {fileID: 1309477881}
   _taskManager: {fileID: 0}
-  location: {fileID: 1651846439}
 --- !u!114 &1769610831
 MonoBehaviour:
   m_ObjectHideFlags: 0

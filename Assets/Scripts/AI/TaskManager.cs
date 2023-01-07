@@ -25,6 +25,7 @@ public class TaskManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         Creature = gameObject;
         NextEvent.AddListener(StartNextEvent);
+        CurrentTaskId = 0;
     }
     public void StartTask()
     {
