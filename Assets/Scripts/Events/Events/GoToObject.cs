@@ -20,28 +20,31 @@ public class GoToObject : Event
     IEnumerator ToObject()
     {
         target.TryGetComponent(out ObjectController TargetController);
-        while (!IsReach(TargetObject))
+        bool GoalIsAchieved = false;
+        while (!GoalIsAchieved)
         {
-            if (_taskManager.CurrentLocation != TargetController.Location)
+            target = TargetObject;
+            if (!TargetController.Location.IsDoorOpen)
             {
-                if (!TargetController.Location.IsDoorOpen)
+                target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+                if (IsReach(target))
                 {
-                    target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
-                    if (IsReach(target))
-                    {
-                        TargetController.Location.SwitchDoorPosition();
-                        target = TargetObject;
-                    }
+                    TargetController.Location.SwitchDoorPosition();
+                    target = TargetObject;
                 }
-                if (!TargetController.Location.IsLightsOn)
+            }
+            else if (!TargetController.Location.IsLightsOn)
+            {
+                target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+                if (IsReach(target))
                 {
-                    target = TargetController.Location.ControlPanel.GetComponent<ObjectController>().InteractionZone;
-                    if (IsReach(target))
-                    {
-                        TargetController.Location.SwitchLights();
-                        target = TargetObject;
-                    }
+                    TargetController.Location.SwitchLights();
+                    target = TargetObject;
                 }
+            }
+            if (TargetController.Location == _taskManager.CurrentLocation && IsReach(TargetObject))
+            {
+                GoalIsAchieved = true;
             }
             GoTo(target);
             yield return null;
@@ -49,4 +52,3 @@ public class GoToObject : Event
         StartNextEvent();
     }
 }
- 

@@ -7,10 +7,6 @@ public class TurnLightsOn : Event
     public Location location;
     public override void StartEvent()
     {
-        if (location == null)
-        {
-            location = _taskManager.taskLocation;
-        }
         if (location != null && target != null && !location.IsLightsOn)
         {
             StartCoroutine(SwitchLight());

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8188603549194147622}
   - component: {fileID: 736772024514018322}
-  - component: {fileID: 6830348992811215776}
+  - component: {fileID: -1355862256895491046}
   m_Layer: 5
   m_Name: EventBox
   m_TagString: Untagged
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6830348992811215776
+--- !u!114 &-1355862256895491046
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,12 +100,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2223957242097643370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd6a2e28ba4f774088b0f89cc2f075b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f04d3ab94b604247a1972b130c1cd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EventName: {fileID: 1497894741290839353}
   _taskManager: {fileID: 0}
-  EventID: 3
+  EventBarID: 0
   CurentEventID: 0
 --- !u!1 &2763035767847572561
 GameObject:

@@ -19,10 +19,11 @@ public class GoToCreature : Event
     }
     IEnumerator ToObject()
     {
-        bool GoalIsAchieved = false;
         target.TryGetComponent(out TaskManager TargetTaskManager);
+        bool GoalIsAchieved = false;
         while (!GoalIsAchieved)
         {
+            target = TargetCreature;
             if (!TargetTaskManager.CurrentLocation.IsDoorOpen)
             {
                 target = TargetTaskManager.CurrentLocation.ControlPanel.GetComponent<ObjectController>().InteractionZone;
@@ -48,7 +49,6 @@ public class GoToCreature : Event
             GoTo(target);
             yield return null;
         }
-        GoTo(_taskManager.Creature);
         StartNextEvent();
     }
 }

@@ -4,13 +4,14 @@ ScriptsOnlyBuild:
     - ActionSelector
     - CameraScript
     - CloseDoor
-    - DestroyObject
     - Door
     - EventIndicator
     - EventsOrderList
     - GameManager
-    - GoToTheTarget
+    - GoToCreature
+    - GoToObject
     - LightSwitch
+    - Location
     - MainHeroValues
     - NPCTaskManager
     - ObjectController
@@ -24,8 +25,6 @@ ScriptsOnlyBuild:
     - TurnLightsOn
     NavMeshComponents.dll:
     - UnityEngine.AI.NavMeshSurface
-    NavMeshComponentsEditor.dll:
-    - UnityEditor.AI.NavMeshAssetManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -92,67 +91,69 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1670}
     - Class: 114
-      Script: {instanceID: 1752}
+      Script: {instanceID: 1706}
     - Class: 114
       Script: {instanceID: 1754}
     - Class: 114
-      Script: {instanceID: 1804}
+      Script: {instanceID: 1756}
     - Class: 114
-      Script: {instanceID: 1970}
+      Script: {instanceID: 1972}
     - Class: 114
-      Script: {instanceID: 2014}
+      Script: {instanceID: 2016}
     - Class: 114
-      Script: {instanceID: 2048}
+      Script: {instanceID: 2050}
     - Class: 114
-      Script: {instanceID: 2060}
+      Script: {instanceID: 2062}
     - Class: 114
-      Script: {instanceID: 2362}
+      Script: {instanceID: 2364}
     - Class: 114
-      Script: {instanceID: 2366}
+      Script: {instanceID: 2368}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2478}
+      Script: {instanceID: 2480}
     - Class: 114
-      Script: {instanceID: 2520}
+      Script: {instanceID: 2522}
     - Class: 114
-      Script: {instanceID: 2654}
+      Script: {instanceID: 2656}
     - Class: 114
-      Script: {instanceID: 2698}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 2746}
+      Script: {instanceID: 2748}
     - Class: 114
-      Script: {instanceID: 2762}
+      Script: {instanceID: 2764}
     - Class: 114
-      Script: {instanceID: 2780}
+      Script: {instanceID: 2782}
     - Class: 114
-      Script: {instanceID: 2852}
+      Script: {instanceID: 2854}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2944}
     - Class: 114
-      Script: {instanceID: 3058}
+      Script: {instanceID: 3060}
     - Class: 114
-      Script: {instanceID: 3374}
+      Script: {instanceID: 3152}
     - Class: 114
-      Script: {instanceID: 3494}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 3518}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 3894}
+      Script: {instanceID: 3520}
     - Class: 114
-      Script: {instanceID: 3918}
+      Script: {instanceID: 3896}
     - Class: 114
-      Script: {instanceID: 4024}
+      Script: {instanceID: 3920}
     - Class: 114
-      Script: {instanceID: 4034}
+      Script: {instanceID: 4028}
     - Class: 114
-      Script: {instanceID: 4190}
+      Script: {instanceID: 4038}
     - Class: 114
-      Script: {instanceID: 4378}
+      Script: {instanceID: 4194}
     - Class: 114
-      Script: {instanceID: 4566}
+      Script: {instanceID: 4382}
     - Class: 114
-      Script: {instanceID: 4610}
+      Script: {instanceID: 4570}
+    - Class: 114
+      Script: {instanceID: 4614}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -234,10 +235,10 @@ ScriptsOnlyBuild:
     className: GameManager
   - hash:
       serializedVersion: 2
-      Hash: 58a64dd46caa662bdb867df39d2fc340
+      Hash: fc60d9fe0dc6404bacc3b31bf166221d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GoToTheTarget
+    className: GoToObject
   - hash:
       serializedVersion: 2
       Hash: 6bc76e17f0d5e93f3eea7f5a2fe227f3
@@ -262,6 +263,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 2c4bb2b654380ea5d80afac6861d1d84
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GoToCreature
   - hash:
       serializedVersion: 2
       Hash: 03f4d765835f875d8a420c98a4809c10
@@ -306,7 +313,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: dc2b269c465b42a821007604bd591b9e
+      Hash: 24c71500a9a83c359bd4851f7bfd9a2d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NPCTaskManager
@@ -330,7 +337,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: ff2b4c6e4a7785d827d76bd5a410916e
+      Hash: fe8a8b3086a43c185b6c49c262faea70
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Room2
@@ -354,7 +361,7 @@ ScriptsOnlyBuild:
     className: KnownKnowledge
   - hash:
       serializedVersion: 2
-      Hash: 0547be0d07ba9ff23cf4071f89a238af
+      Hash: 890c5433dfabd1b335cc886866560314
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LeaveRoom
@@ -366,7 +373,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: ff2b4c6e4a7785d827d76bd5a410916e
+      Hash: fe8a8b3086a43c185b6c49c262faea70
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Room
@@ -456,7 +463,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: 58a64dd46caa662bdb867df39d2fc340
+      Hash: 613ac819c28e75f9f023dab980911c72
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OpenDoor
@@ -492,13 +499,13 @@ ScriptsOnlyBuild:
     className: EventIndicator
   - hash:
       serializedVersion: 2
-      Hash: 58a64dd46caa662bdb867df39d2fc340
+      Hash: 613ac819c28e75f9f023dab980911c72
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CloseDoor
   - hash:
       serializedVersion: 2
-      Hash: 0547be0d07ba9ff23cf4071f89a238af
+      Hash: 890c5433dfabd1b335cc886866560314
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Task
@@ -558,7 +565,7 @@ ScriptsOnlyBuild:
     className: Button
   - hash:
       serializedVersion: 2
-      Hash: 0547be0d07ba9ff23cf4071f89a238af
+      Hash: 890c5433dfabd1b335cc886866560314
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnterRoom
@@ -582,7 +589,7 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
-      Hash: ff2b4c6e4a7785d827d76bd5a410916e
+      Hash: fe8a8b3086a43c185b6c49c262faea70
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Location
@@ -780,13 +787,19 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DialogueBox
+  - hash:
+      serializedVersion: 2
       Hash: 0e57a341531c2c0a72d6b366fd018e5b
     assemblyName: NavMeshComponentsExamples.dll
     namespaceName: 
     className: NavMeshPrefabInstance
   - hash:
       serializedVersion: 2
-      Hash: e9c777a631db1b642e88895413ae2aa3
+      Hash: ef2d80421c296b2b9cfcc48e2ff34dff
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerTaskManager
@@ -834,7 +847,7 @@ ScriptsOnlyBuild:
     className: DataManager
   - hash:
       serializedVersion: 2
-      Hash: dc2b269c465b42a821007604bd591b9e
+      Hash: 24c71500a9a83c359bd4851f7bfd9a2d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TaskManager
@@ -898,12 +911,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EventsOrderList
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DialogueBox
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

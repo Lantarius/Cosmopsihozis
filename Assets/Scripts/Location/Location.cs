@@ -60,6 +60,7 @@ public class Location : MonoBehaviour
     {
         if (Door != null)
         {
+            StopAllCoroutines();
             StartCoroutine(DoorTransfer());
         }
     }
@@ -74,16 +75,19 @@ public class Location : MonoBehaviour
     public virtual void CustomProperties() { }
     void OnTriggerEnter(Collider other)
     {
-        other.gameObject.TryGetComponent<TaskManager>(out TaskManager taskManager);
-        taskManager.CurrentLocation = this;
+        if(other.gameObject.TryGetComponent<TaskManager>(out TaskManager taskManager))
+        {
+            taskManager.CurrentLocation = this;
+        }
     }
+
     IEnumerator DoorTransfer()
     {
         if (IsDoorOpen)
         {
             for (float i = 0; i < DoorTransferTime; i += Time.deltaTime)
             {
-                Door.transform.position = Vector3.Lerp(startPosition, targetPosition, i);
+                Door.transform.position = Vector3.Lerp(Door.transform.position, targetPosition, i);
                 yield return null;
             }
         }

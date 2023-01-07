@@ -22,7 +22,7 @@ public class EventsOrderList : MonoBehaviour
         {
             EventBar.TryGetComponent(out EventIndicator eventInducator);
             eventInducator.EventBarID = i;
-            Instantiate(EventBar, PivotPosition, transform.rotation ,gameObject.transform);
+            Instantiate(EventBar, PivotPosition, transform.rotation, gameObject.transform);
             PivotPosition.x += 250;
         }
     }
@@ -32,4 +32,3 @@ public class EventsOrderList : MonoBehaviour
     }
 
 }
- 

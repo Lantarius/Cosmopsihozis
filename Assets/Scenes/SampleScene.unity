@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d917f0bb33e5b6f439cf4effb695aefd, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: d81cb84ee85f55e449f4516a7038bd50, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -246,8 +246,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52259612}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -308,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52259612}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.66, y: 2.8721752, z: 0.34478742}
+  m_LocalPosition: {x: 0.84, y: 2.8721752, z: 0.34478742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 462776165}
@@ -641,7 +641,6 @@ GameObject:
   - component: {fileID: 210691146}
   - component: {fileID: 210691145}
   - component: {fileID: 210691144}
-  - component: {fileID: 210691140}
   m_Layer: 6
   m_Name: Target 2
   m_TagString: Untagged
@@ -665,21 +664,6 @@ Transform:
   m_Father: {fileID: 888128453}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &210691140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210691138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f9c6f4f1e14dfa418dcf2d1416157e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Values: {fileID: 11400000, guid: 8ac63f86fa4bbed43bbb4cbbb105795a, type: 2}
-  ActionName: 
-  ActionMenu: {fileID: 0}
 --- !u!114 &210691144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +926,123 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1035877452160899613, guid: 61ba32174767dd747b9baef16264407e, type: 3}
   m_PrefabInstance: {fileID: 926387671}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &418225981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418225982}
+  - component: {fileID: 418225989}
+  - component: {fileID: 418225986}
+  - component: {fileID: 418225985}
+  - component: {fileID: 418225984}
+  - component: {fileID: 418225983}
+  m_Layer: 3
+  m_Name: Enter Room 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418225982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418225981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 194179748}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &418225983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418225981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53792cb746c4fd4f910d438d291967b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Meet with green guy
+  target: {fileID: 852783259}
+  _taskManager: {fileID: 0}
+  TargetCreature: {fileID: 0}
+--- !u!114 &418225984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418225981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a2c34a8ad5fcd458b2ea34383a0400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Touch Cube
+  target: {fileID: 210691138}
+  _taskManager: {fileID: 0}
+  TargetObject: {fileID: 0}
+--- !u!114 &418225985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418225981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e063e6faa6f3c1744a3a8fc9d6a52c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Turn Light On
+  target: {fileID: 1309477881}
+  _taskManager: {fileID: 0}
+  location: {fileID: 1651846439}
+--- !u!114 &418225986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418225981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f45b5e927a2534fb027291e0aca5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventName: Turn Light Off
+  target: {fileID: 1309477881}
+  _taskManager: {fileID: 0}
+  location: {fileID: 1651846439}
+--- !u!114 &418225989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418225981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547af2a1aae3f7a4abaaa502c2184bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TaskName: Enter Room 2
+  events:
+  - {fileID: 418225983}
+  - {fileID: 418225984}
+  _taskManager: {fileID: 0}
+  CurrentEventId: 0
 --- !u!1001 &432394339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2031,7 +2132,7 @@ PrefabInstance:
     - target: {fileID: 1035877452160899605, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: taskIndicator
       value: 
-      objectReference: {fileID: 1761946449}
+      objectReference: {fileID: 1081464237}
     - target: {fileID: 1035877452160899605, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: CurrentTaskName
       value: 
@@ -2047,18 +2148,18 @@ PrefabInstance:
     - target: {fileID: 1035877452160899605, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: tasks.Array.data[0]
       value: 
-      objectReference: {fileID: 1029692650}
+      objectReference: {fileID: 418225989}
     - target: {fileID: 1035877452160899605, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: tasks.Array.data[1]
       value: 
-      objectReference: {fileID: 1464453216}
+      objectReference: {fileID: 1029692650}
     - target: {fileID: 1035877452160899607, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1035877452160899607, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.56
+      value: 12.18
       objectReference: {fileID: 0}
     - target: {fileID: 1035877452160899607, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2066,7 +2167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035877452160899607, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.45
+      value: 15.74
       objectReference: {fileID: 0}
     - target: {fileID: 1035877452160899607, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2099,6 +2200,10 @@ PrefabInstance:
     - target: {fileID: 1035877452160899613, guid: 61ba32174767dd747b9baef16264407e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1035877452160899613, guid: 61ba32174767dd747b9baef16264407e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61ba32174767dd747b9baef16264407e, type: 3}
@@ -2306,8 +2411,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1029692645}
   - component: {fileID: 1029692650}
-  - component: {fileID: 1029692646}
-  - component: {fileID: 1029692651}
   - component: {fileID: 1029692648}
   - component: {fileID: 1029692647}
   - component: {fileID: 1029692649}
@@ -2333,22 +2436,6 @@ Transform:
   m_Father: {fileID: 194179748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1029692646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029692644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ad3cb11d8307346902523bf1216b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Open Door
-  target: {fileID: 1309477881}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
 --- !u!114 &1029692647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2410,27 +2497,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TaskName: Enter Room 1
-  TaskLocation: {fileID: 1651846439}
   events:
+  - {fileID: 1029692648}
+  - {fileID: 1029692647}
   - {fileID: 1029692649}
   _taskManager: {fileID: 0}
   CurrentEventId: 0
---- !u!114 &1029692651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029692644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a425a7d324d714a4e995067fc4e8e241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Close Door
-  target: {fileID: 1309477881}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
 --- !u!114 &1029692652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2457,6 +2529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081464234}
   - component: {fileID: 1081464236}
+  - component: {fileID: 1081464237}
   - component: {fileID: 1081464235}
   m_Layer: 5
   m_Name: Current Task Text
@@ -2581,6 +2654,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081464233}
   m_CullTransparentMesh: 1
+--- !u!114 &1081464237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081464233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa7736988444230439d2578ed10d0843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentTaskText: {fileID: 1081464235}
 --- !u!1 &1117691262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,7 +3103,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309477881}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -3533,157 +3619,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1464453210
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1464453211}
-  - component: {fileID: 1464453216}
-  - component: {fileID: 1464453215}
-  - component: {fileID: 1464453217}
-  - component: {fileID: 1464453213}
-  - component: {fileID: 1464453212}
-  - component: {fileID: 1464453214}
-  - component: {fileID: 1464453218}
-  m_Layer: 3
-  m_Name: Enter Room 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1464453211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 194179748}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1464453212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e063e6faa6f3c1744a3a8fc9d6a52c60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Turn Light On
-  target: {fileID: 1750217327}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
---- !u!114 &1464453213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33f45b5e927a2534fb027291e0aca5d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Turn Light Off
-  target: {fileID: 1750217327}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
---- !u!114 &1464453214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a2c34a8ad5fcd458b2ea34383a0400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Touch Cube
-  target: {fileID: 52259612}
-  _taskManager: {fileID: 0}
-  TargetObject: {fileID: 0}
---- !u!114 &1464453215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ad3cb11d8307346902523bf1216b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Open Door
-  target: {fileID: 1750217327}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
---- !u!114 &1464453216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 547af2a1aae3f7a4abaaa502c2184bc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TaskName: Enter Room 2
-  TaskLocation: {fileID: 888128451}
-  events:
-  - {fileID: 1464453218}
-  _taskManager: {fileID: 0}
-  CurrentEventId: 0
---- !u!114 &1464453217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a425a7d324d714a4e995067fc4e8e241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Close Door
-  target: {fileID: 1750217327}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
---- !u!114 &1464453218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464453210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53792cb746c4fd4f910d438d291967b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Meet with green guy
-  target: {fileID: 852783259}
-  _taskManager: {fileID: 0}
-  TargetCreature: {fileID: 0}
 --- !u!1 &1608813883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,7 +3766,7 @@ MonoBehaviour:
   DoorTransferDistance: 3.5
   DoorTransferTime: 1
   IsDoorOpen: 0
-  IsCameraFixed: 1
+  IsCameraFixed: 0
   CameraPosition: {x: 0, y: 48.4, z: 0}
 --- !u!1 &1665772840
 GameObject:
@@ -4197,7 +4132,6 @@ GameObject:
   - component: {fileID: 1761946447}
   - component: {fileID: 1761946446}
   - component: {fileID: 1761946445}
-  - component: {fileID: 1761946449}
   - component: {fileID: 1761946450}
   m_Layer: 5
   m_Name: Canvas
@@ -4290,19 +4224,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1761946449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1761946444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f04d3ab94b604247a1972b130c1cd02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentTaskText: {fileID: 1081464235}
 --- !u!114 &1761946450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4344,8 +4265,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1769610827}
   - component: {fileID: 1769610833}
-  - component: {fileID: 1769610832}
-  - component: {fileID: 1769610828}
   - component: {fileID: 1769610830}
   - component: {fileID: 1769610829}
   - component: {fileID: 1769610831}
@@ -4370,22 +4289,6 @@ Transform:
   m_Father: {fileID: 149513360}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1769610828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769610826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a425a7d324d714a4e995067fc4e8e241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Close Door
-  target: {fileID: 1309477881}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
 --- !u!114 &1769610829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4434,22 +4337,6 @@ MonoBehaviour:
   target: {fileID: 52259612}
   _taskManager: {fileID: 0}
   TargetObject: {fileID: 0}
---- !u!114 &1769610832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1769610826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ad3cb11d8307346902523bf1216b40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EventName: Open Door
-  target: {fileID: 1309477881}
-  _taskManager: {fileID: 0}
-  location: {fileID: 0}
 --- !u!114 &1769610833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4463,10 +4350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TaskName: Enter Room 1
-  TaskLocation: {fileID: 1651846439}
   events:
   - {fileID: 1769610831}
-  - {fileID: 1769610830}
   _taskManager: {fileID: 0}
   CurrentEventId: 0
 --- !u!1 &1776217940
@@ -5889,7 +5774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237247276758813894, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.36
+      value: -16.03
       objectReference: {fileID: 0}
     - target: {fileID: 6237247276758813894, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5897,7 +5782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6237247276758813894, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.36
+      value: 20.54
       objectReference: {fileID: 0}
     - target: {fileID: 6237247276758813894, guid: 2a8e96fc425c7c9458947f81a161f87f, type: 3}
       propertyPath: m_LocalRotation.w

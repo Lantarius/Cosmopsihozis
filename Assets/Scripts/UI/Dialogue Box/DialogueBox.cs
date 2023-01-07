@@ -6,20 +6,21 @@ using UnityEngine.Events;
 
 public class DialogueBox : MonoBehaviour
 {
-    public static UnityEvent<string, string> _dialogueBoxEvent = new UnityEvent<string, string>();
     TMP_Text CharacterName;
     TMP_Text DialogueText;
-    private void Awake()
-    {
-        _dialogueBoxEvent.AddListener(FillDialogueBox);
-    }
-    public static void Call(string Name, string Text)
-    {
-        _dialogueBoxEvent.Invoke(Name, Text);       
-    }
-    void FillDialogueBox(string Name, string Text)
+    public void UpadateDialogueBox(string Name, string Text)
     {
         CharacterName.text = Name;
         DialogueText.text = Text;
+    }
+    public void StartDialogue(string Name, string Text)
+    {
+        gameObject.SetActive(true);
+    }
+    public void EndDialogue()
+    {
+        gameObject.SetActive(false);
+        CharacterName = null;
+        DialogueText = null;
     }
 }

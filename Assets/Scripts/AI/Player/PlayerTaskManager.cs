@@ -21,22 +21,9 @@ public class PlayerTaskManager : TaskManager
     {
         base.NextTask();
 
-        EventsOrderList.MoveEventBar();
+        EventList.GeneteateEventBars();
+
 
         taskIndicator.UpdateCurrentTaskText(CurrentTask);
-
-        StartCoroutine(CheckEvent());
-    }
-    IEnumerator CheckEvent()
-    {
-        EventList.GeneteateEventBars();
-        int EventID = 0;
-        while(EventID <= CurrentTask.events.Count)
-        {
-            yield return new WaitUntil(() => CurrentTask.CurrentEventId > EventID);
-            EventID++;
-            EventsOrderList.MoveEventBar();
-        }
-        yield return null;
     }
 }

@@ -14,13 +14,13 @@ public class EventIndicator : MonoBehaviour
     private void Awake()
     {
         _taskManager = GameObject.Find("Player").GetComponent<PlayerTaskManager>();
-        EventsOrderList._eventbarEvent.AddListener(EventBarBehavior);
+        _taskManager.NextEvent.AddListener(EventBarBehavior);
         EventName.text = _taskManager.CurrentTask.events[EventBarID].EventName;
         TaskID = _taskManager.CurrentTaskId;
     }
     void EventBarBehavior()
     {
-        if(TaskID == _taskManager.CurrentTaskId)
+        if (TaskID == _taskManager.CurrentTaskId)
         {
             if (EventBarID < _taskManager.CurrentTask.CurrentEventId)
             {

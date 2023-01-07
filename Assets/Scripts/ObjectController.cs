@@ -14,6 +14,9 @@ public class ObjectController : MonoBehaviour
     public Location Location;
     void Awake()
     {
-        Location = GetComponentInParent<Location>();
+        if (Location == null)
+        {
+            Location = GetComponentInParent<Location>();
+        }
     }
 }

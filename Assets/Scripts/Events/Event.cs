@@ -19,8 +19,7 @@ public class Event : MonoBehaviour
     }
     protected void StartNextEvent()
     {
-        _taskManager.CurrentTask.CurrentEventId++;
-        _taskManager.CurrentTask.StartEvent();
+        _taskManager.NextEvent.Invoke();
     }
     protected void StopPreviousEvent()
     {
@@ -41,21 +40,21 @@ public class Event : MonoBehaviour
         }
         _taskManager.agent.SetDestination(target.transform.position);
     }
-protected bool IsReach(GameObject target)
-{
-    playerPosition = _taskManager.Creature.transform.position;
-    playerPosition.y = 0;
-    targetPosition = target.transform.position;
-    targetPosition.y = 0;
-
-    if (playerPosition == targetPosition)
+    protected bool IsReach(GameObject target)
     {
-        return true;
+        playerPosition = _taskManager.Creature.transform.position;
+        playerPosition.y = 0;
+        targetPosition = target.transform.position;
+        targetPosition.y = 0;
+
+        if (playerPosition == targetPosition)
+        {
+            return true;
+        }
+        else return false;
     }
-    else return false;
-}
-protected float DistanceTo(GameObject target)
-{
-    return Vector3.Distance(_taskManager.Creature.transform.position, target.transform.position);
-}
+    protected float DistanceTo(GameObject target)
+    {
+        return Vector3.Distance(_taskManager.Creature.transform.position, target.transform.position);
+    }
 }
