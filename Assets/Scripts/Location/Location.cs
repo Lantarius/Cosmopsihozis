@@ -75,7 +75,7 @@ public class Location : MonoBehaviour
     public virtual void CustomProperties() { }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.TryGetComponent<TaskManager>(out TaskManager taskManager))
+        if(other.gameObject.TryGetComponent<AIController>(out AIController taskManager))
         {
             taskManager.CurrentLocation = this;
         }

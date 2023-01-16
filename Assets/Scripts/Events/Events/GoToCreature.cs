@@ -5,10 +5,11 @@ using UnityEngine;
 public class GoToCreature : Event
 {
     [SerializeField] GameObject TargetCreature;
-    TaskManager TargetTaskManager;
+    AIController TargetController;
     private void Start()
     {
-        TargetTaskManager = target.GetComponent<TaskManager>();
+        TargetController = target.GetComponent<AIController>();
+        TargetCreature = target;
     }
     public override void StartEvent()
     {
@@ -23,25 +24,25 @@ public class GoToCreature : Event
             while (!GoalIsAchieved)
             {
                 target = TargetCreature;
-                if (!TargetTaskManager.CurrentLocation.IsDoorOpen)
+                if (!TargetController.CurrentLocation.IsDoorOpen)
                 {
-                    target = TargetTaskManager.CurrentLocation.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+                    target = TargetController.CurrentLocation.ControlPanel.GetComponent<ObjectController>().InteractionZone;
                     if (IsReach(target))
                     {
-                        TargetTaskManager.CurrentLocation.SwitchDoorPosition();
+                        TargetController.CurrentLocation.SwitchDoorPosition();
                         target = TargetCreature;
                     }
                 }
-                else if (!TargetTaskManager.CurrentLocation.IsLightsOn)
+                else if (!TargetController.CurrentLocation.IsLightsOn)
                 {
-                    target = TargetTaskManager.CurrentLocation.ControlPanel.GetComponent<ObjectController>().InteractionZone;
+                    target = TargetController.CurrentLocation.ControlPanel.GetComponent<ObjectController>().InteractionZone;
                     if (IsReach(target))
                     {
-                        TargetTaskManager.CurrentLocation.SwitchLights();
+                        TargetController.CurrentLocation.SwitchLights();
                         target = TargetCreature;
                     }
                 }
-                if (_taskManager.CurrentLocation == TargetTaskManager.CurrentLocation && DistanceTo(TargetCreature) < 5)
+                if (_taskManager.CurrentLocation == TargetController.CurrentLocation && DistanceTo(TargetCreature) < 5)
                 {
                     GoalIsAchieved = true;
                 }

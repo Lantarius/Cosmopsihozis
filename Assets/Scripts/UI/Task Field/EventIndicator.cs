@@ -7,13 +7,13 @@ using UnityEngine.Events;
 public class EventIndicator : MonoBehaviour
 {
     [SerializeField] TMP_Text EventName;
-    [SerializeField] PlayerTaskManager _taskManager;
+    [SerializeField] PlayerController _taskManager;
     public int EventBarID;
     public int CurentEventID;
     int TaskID;
     private void Awake()
     {
-        _taskManager = GameObject.Find("Player").GetComponent<PlayerTaskManager>();
+        _taskManager = GameObject.Find("Player").GetComponent<PlayerController>();
         _taskManager.NextEvent.AddListener(EventBarBehavior);
         EventName.text = _taskManager.CurrentTask.events[EventBarID].EventName;
         TaskID = _taskManager.CurrentTaskId;

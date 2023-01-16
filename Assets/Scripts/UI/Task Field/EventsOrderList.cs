@@ -8,12 +8,12 @@ public class EventsOrderList : MonoBehaviour
     [SerializeField] GameObject EventBar;
     Vector3 PivotPosition;
     Vector3 DefaultPivotPosition;
-    PlayerTaskManager _taskManager;
+    PlayerController _taskManager;
     public static UnityEvent _eventbarEvent = new UnityEvent();
     private void Awake()
     {
         DefaultPivotPosition = transform.position;
-        _taskManager = GameObject.Find("Player").GetComponent<PlayerTaskManager>();
+        _taskManager = GameObject.Find("Player").GetComponent<PlayerController>();
     }
     public void GeneteateEventBars()
     {

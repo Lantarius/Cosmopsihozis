@@ -12,7 +12,7 @@ public class Task : MonoBehaviour
     [Space(10)]
     public List<Event> events;
     [Header("Debug")]
-    public TaskManager _taskManager;
+    public AIController _taskManager;
     [HideInInspector]
     public int CurrentEventId;
     [HideInInspector]
@@ -35,8 +35,9 @@ public class Task : MonoBehaviour
         }
         else
         {
-            if (_taskManager.CurrentTaskId < _taskManager.tasks.Count || events.Count == 0)
+            if (_taskManager.CurrentTaskId + 1 < _taskManager.tasks.Count || events.Count == 0)
             {
+                _taskManager.CurrentTaskId++;
                 _taskManager.NextTask();
             }
         }

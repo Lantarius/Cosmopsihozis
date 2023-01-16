@@ -6,13 +6,13 @@ public class CameraScript : MonoBehaviour
 {
     Camera maincamera;
     [SerializeField] GameObject Player;
-    private PlayerTaskManager taskManager;
+    private PlayerController taskManager;
     [SerializeField] Vector3 CameraPos;
     [Range (0, 100)]public float CameraHight;
     void Start()
     {
         maincamera = Camera.main;
-        taskManager = Player.GetComponent<PlayerTaskManager>();
+        taskManager = Player.GetComponent<PlayerController>();
         CameraToPlayer();
         maincamera.transform.position = CameraPos;
     }

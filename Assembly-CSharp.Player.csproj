@@ -56,13 +56,14 @@
     <Analyzer Include="G:\Visual Studio\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\Task Field\TaskIndicator.cs" />
     <Compile Include="Assets\Scripts\Events\Event.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Events\Events\GoToObject.cs" />
     <Compile Include="Assets\Scripts\Events\Events\GoToCreature.cs" />
     <Compile Include="Assets\Scripts\UI\Task Field\EventIndicator.cs" />
     <Compile Include="Assets\Scripts\Action\Level 4\DestroyObject.cs" />
-    <Compile Include="Assets\Scripts\AI\NPC\NPCTaskManager.cs" />
+    <Compile Include="Assets\Scripts\AI\NPC\NPCController.cs" />
     <Compile Include="Assets\Scripts\Location\Locations\Room2.cs" />
     <Compile Include="Assets\Scripts\KnownKnowledge.cs" />
     <Compile Include="Assets\Scripts\AI\Tasks\LeaveRoom.cs" />
@@ -80,14 +81,13 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\UI\Action Menu\ActionSelector.cs" />
     <Compile Include="Assets\Scripts\UI\Dialogue Box\DialogueBox.cs" />
-    <Compile Include="Assets\Scripts\AI\Player\PlayerTaskManager.cs" />
+    <Compile Include="Assets\Scripts\AI\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ObjectController.cs" />
     <Compile Include="Assets\Scripts\DataManager.cs" />
-    <Compile Include="Assets\Scripts\AI\TaskManager.cs" />
+    <Compile Include="Assets\Scripts\AI\AIController.cs" />
     <Compile Include="Assets\Scripts\Action\Level 1\Door.cs" />
     <Compile Include="Assets\Scripts\Events\Events\TurnLightOff.cs" />
     <Compile Include="Assets\Scripts\UI\Task Field\EventsOrderList.cs" />
-    <Compile Include="Assets\Scripts\UI\Task Field\TaskIndicator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Events\README.txt" />

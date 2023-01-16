@@ -7,12 +7,11 @@ public class Event : MonoBehaviour
     public string EventName;
     [Header("Debug")]
     protected Vector3 targetPosition;
-    protected Vector3 playerPosition;
+    protected Vector3 creaturePosition;
     [Header("Required Feilds")]
     [SerializeField] protected GameObject target;
     [HideInInspector]
-    public TaskManager _taskManager;
-    [HideInInspector]
+    public AIController _taskManager;
     public virtual void StartEvent()
     {
 
@@ -28,10 +27,6 @@ public class Event : MonoBehaviour
             _taskManager.CurrentTask.events[_taskManager.CurrentTask.CurrentEventId - 1].StopAllCoroutines();
         }
     }
-    protected void StartEventBar()
-    {
-
-    }
     protected void GoTo(GameObject target)
     {
         if (target.TryGetComponent(out ObjectController objectController))
@@ -42,12 +37,12 @@ public class Event : MonoBehaviour
     }
     protected bool IsReach(GameObject target)
     {
-        playerPosition = _taskManager.Creature.transform.position;
-        playerPosition.y = 0;
+        creaturePosition = _taskManager.Creature.transform.position;
+        creaturePosition.y = 0;
         targetPosition = target.transform.position;
         targetPosition.y = 0;
 
-        if (playerPosition == targetPosition)
+        if (creaturePosition == targetPosition)
         {
             return true;
         }

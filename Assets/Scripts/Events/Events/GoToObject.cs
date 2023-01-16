@@ -9,6 +9,7 @@ public class GoToObject : Event
     private void Start()
     {
         TargetController = target.GetComponent<ObjectController>();
+        TargetObject = TargetController.InteractionZone;
     }
     public override void StartEvent()
     {
@@ -19,7 +20,6 @@ public class GoToObject : Event
         bool GoalIsAchieved = false;
         if (target != null)
         {
-            TargetObject = target;
             while (!GoalIsAchieved)
             {
                 target = TargetObject;
