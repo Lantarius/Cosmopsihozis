@@ -5,9 +5,14 @@ using TMPro;
 
 public class TaskIndicator : MonoBehaviour
 {
+    [SerializeField] AIController playerController;
     [SerializeField] TMP_Text CurrentTaskText;
-    public void UpdateCurrentTaskText(Task CurrentTask)
+    private void Awake()
     {
-        CurrentTaskText.text = CurrentTask.TaskName;
+        playerController.NextTask.AddListener(UpdateCurrentTaskText);
+    }
+    public void UpdateCurrentTaskText()
+    {
+        CurrentTaskText.text = playerController.CurrentTask.TaskName;
     }
 }

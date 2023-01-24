@@ -11,4 +11,10 @@ public class MainHeroValues : ScriptableObject
     public const int LEVEL_2_EDGE = 70;
     public const int LEVEL_3_EDGE = 50;
     public const int LEVEL_4_EDGE = 20;
+    [TextArea(20, 20)]
+    public string text;
+    private void Awake()
+    {
+
+    }
 }

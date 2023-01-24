@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8824939ed9c266143b32dbcfa9cf5161, type: 3}
   m_Name: HeroValues
   m_EditorClassIdentifier: 
-  cl: 82
-  rwp: -5.1
-  Knowledges: []
+  cl: 100
+  text: 

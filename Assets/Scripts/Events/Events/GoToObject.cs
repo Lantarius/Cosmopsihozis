@@ -41,7 +41,7 @@ public class GoToObject : Event
                         target = TargetObject;
                     }
                 }
-                if (TargetController.Location == _taskManager.CurrentLocation && IsReach(TargetObject))
+                if (TargetController.Location == _AIController.CurrentLocation && IsReach(TargetObject))
                 {
                     GoalIsAchieved = true;
                 }

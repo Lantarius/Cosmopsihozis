@@ -86,8 +86,12 @@
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Scripts\AI\AIController.cs" />
     <Compile Include="Assets\Scripts\Action\Level 1\Door.cs" />
+    <Compile Include="Assets\Scripts\Events\Events\StartDialogue.cs" />
     <Compile Include="Assets\Scripts\Events\Events\TurnLightOff.cs" />
+    <Compile Include="Assets\Scripts\Dialogue System\DialogueLine.cs" />
     <Compile Include="Assets\Scripts\UI\Task Field\EventsOrderList.cs" />
+    <Compile Include="Assets\Scripts\Dialogue System\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Dialogue Box\TextBox.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Events\README.txt" />

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public MainHeroValues Values;
-    [SerializeField]private Slider slider;
+    [SerializeField]private Text text;
     void Start()
     {
         DataManager.StartAction(Values);

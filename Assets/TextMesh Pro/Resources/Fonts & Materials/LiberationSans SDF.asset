@@ -32,14 +32,14 @@ Material:
     - _MaskSoftnessY: 0
     - _OutlineSoftness: 0
     - _OutlineWidth: 0.205
-    - _PerspectiveFilter: 0.875
+    - _PerspectiveFilter: 0.96
     - _ScaleRatioA: 0.9
     - _ScaleRatioB: 1
     - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
-    - _Sharpness: 0
+    - _Sharpness: -0.4
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0

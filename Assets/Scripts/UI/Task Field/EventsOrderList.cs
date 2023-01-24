@@ -14,6 +14,7 @@ public class EventsOrderList : MonoBehaviour
     {
         DefaultPivotPosition = transform.position;
         _taskManager = GameObject.Find("Player").GetComponent<PlayerController>();
+        _taskManager.NextTask.AddListener(GeneteateEventBars);
     }
     public void GeneteateEventBars()
     {

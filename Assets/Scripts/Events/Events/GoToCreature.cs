@@ -18,7 +18,7 @@ public class GoToCreature : Event
     IEnumerator ToObject()
     {
         bool GoalIsAchieved = false;
-        if (target != null)
+        if (target != null && target.activeInHierarchy == true)
         {
             TargetCreature = target;
             while (!GoalIsAchieved)
@@ -42,7 +42,7 @@ public class GoToCreature : Event
                         target = TargetCreature;
                     }
                 }
-                if (_taskManager.CurrentLocation == TargetController.CurrentLocation && DistanceTo(TargetCreature) < 5)
+                if (_AIController.CurrentLocation == TargetController.CurrentLocation && DistanceTo(TargetCreature) < 5)
                 {
                     GoalIsAchieved = true;
                 }
@@ -55,6 +55,5 @@ public class GoToCreature : Event
         {
             StartNextEvent();
         }
-
     }
 }

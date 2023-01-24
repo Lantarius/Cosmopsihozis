@@ -4,8 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class AIController : MonoBehaviour
+public abstract class AIController : MonoBehaviour
 {
+    [HideInInspector]
+    public GameObject Creature;
     [Header("Location")]
     public Location CurrentLocation;
     [Space(10)]
@@ -15,29 +17,26 @@ public class AIController : MonoBehaviour
     [HideInInspector]
     public int CurrentTaskId;
     [HideInInspector]
-    public GameObject Creature;
-    [HideInInspector]
     public NavMeshAgent agent;
     [HideInInspector]
     public UnityEvent NextEvent;
+    [HideInInspector]
+    public UnityEvent NextTask;
     private void Awake()
     {
+        NextTask.AddListener(StartNextTask);
+        NextEvent.AddListener(StartNextEvent);
         agent = GetComponent<NavMeshAgent>();
         Creature = gameObject;
-        NextEvent.AddListener(StartNextEvent);
-        CurrentTaskId = 0;
+        CurrentTask = tasks[CurrentTaskId];
+        StartCoroutine(LoadTasks());
     }
-    public void StartTask()
-    {
-        StartCoroutine(StartNextTask());
-    }    
-    public virtual void NextTask()
+    virtual public void StartNextTask()
     {
         CurrentTask = tasks[CurrentTaskId];
         CurrentTask._taskManager = this;
         CurrentTask.StartTask();
     }
-
     public void ResetLocationProperties()
     {
         CurrentLocation = null;
@@ -47,12 +46,17 @@ public class AIController : MonoBehaviour
         CurrentTask.CurrentEventId++;
         CurrentTask.StartEvent();
     }
-    IEnumerator StartNextTask()
+    public void FreezeCreature()
+    {
+        agent.isStopped = true;
+    }
+    public void UnfreezeCreature()
+    {
+        agent.isStopped = false;
+    }
+    IEnumerator LoadTasks()
     {
         yield return null;
-        if (tasks.Count > 0)
-        {
-            NextTask();
-        }
+        NextTask.Invoke();
     }
 }

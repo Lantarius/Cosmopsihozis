@@ -5,8 +5,5 @@ using UnityEngine.AI;
 
 public class NPCController : AIController
 {
-    void Start()
-    {
-        StartTask();
-    }
+
 }

@@ -11,20 +11,20 @@ public class Event : MonoBehaviour
     [Header("Required Feilds")]
     [SerializeField] protected GameObject target;
     [HideInInspector]
-    public AIController _taskManager;
+    public AIController _AIController;
     public virtual void StartEvent()
     {
 
     }
     protected void StartNextEvent()
     {
-        _taskManager.NextEvent.Invoke();
+        _AIController.NextEvent.Invoke();
     }
     protected void StopPreviousEvent()
     {
-        if (_taskManager.CurrentTask.CurrentEventId > 0)
+        if (_AIController.CurrentTask.CurrentEventId > 0)
         {
-            _taskManager.CurrentTask.events[_taskManager.CurrentTask.CurrentEventId - 1].StopAllCoroutines();
+            _AIController.CurrentTask.events[_AIController.CurrentTask.CurrentEventId - 1].StopAllCoroutines();
         }
     }
     protected void GoTo(GameObject target)
@@ -33,11 +33,11 @@ public class Event : MonoBehaviour
         {
             target = objectController.InteractionZone;
         }
-        _taskManager.agent.SetDestination(target.transform.position);
+        _AIController.agent.SetDestination(target.transform.position);
     }
     protected bool IsReach(GameObject target)
     {
-        creaturePosition = _taskManager.Creature.transform.position;
+        creaturePosition = _AIController.Creature.transform.position;
         creaturePosition.y = 0;
         targetPosition = target.transform.position;
         targetPosition.y = 0;
@@ -50,6 +50,6 @@ public class Event : MonoBehaviour
     }
     protected float DistanceTo(GameObject target)
     {
-        return Vector3.Distance(_taskManager.Creature.transform.position, target.transform.position);
+        return Vector3.Distance(_AIController.Creature.transform.position, target.transform.position);
     }
 }

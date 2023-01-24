@@ -15,15 +15,5 @@ public class PlayerController : AIController
     void Start()
     {
         mainCamera = Camera.main;
-        StartTask();
-    }
-    public override void NextTask()
-    {
-        base.NextTask();
-
-        EventList.GeneteateEventBars();
-
-
-        taskIndicator.UpdateCurrentTaskText(CurrentTask);
     }
 }

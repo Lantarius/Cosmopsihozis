@@ -27,9 +27,9 @@ public class Task : MonoBehaviour
         if (CurrentEventId < events.Count)
         {
             CurrentEvent = events[CurrentEventId];
-            if (CurrentEvent._taskManager == null)
+            if (CurrentEvent._AIController == null)
             {
-                CurrentEvent._taskManager = _taskManager;
+                CurrentEvent._AIController = _taskManager;
             }
             CurrentEvent.StartEvent();
         }
@@ -38,8 +38,16 @@ public class Task : MonoBehaviour
             if (_taskManager.CurrentTaskId + 1 < _taskManager.tasks.Count || events.Count == 0)
             {
                 _taskManager.CurrentTaskId++;
-                _taskManager.NextTask();
+                _taskManager.NextTask.Invoke();
             }
         }
+    }
+    public void PauseTask()
+    {
+        CurrentEvent.StopAllCoroutines();
+    }
+    public void ResumeTask()
+    {
+        CurrentEvent.StartEvent();
     }
 }
